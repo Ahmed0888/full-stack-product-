@@ -9,7 +9,7 @@ async function dbCon() {
   try {
     const db = await mongoose
       // .connect(`mongodb+srv://Ahmer:${process.env.DB}@cluster0.lnsqyol.mongodb.net/?appName=Cluster0`)
-      .connect(`mongodb+srv://AhmedHashmi:NZ0X7imkAtE9XLz8@cluster0.r7yo0xw.mongodb.net/?appName=Cluster0`)
+      .connect(`mongodb+srv://AhmedHashmi:@cluster0.r7yo0xw.mongodb.net/?appName=Cluster0`)
       .then(() => console.log("database connected"))
       .catch((err) => console.log(`connection failed ${err}`));
     mongoose.connection.on("connected", () =>
