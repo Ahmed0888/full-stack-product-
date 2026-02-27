@@ -7,7 +7,7 @@ require("dotenv").config()
 // singup a user with single role as a user
 const Signup = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password,role } = req.body;
         if (!name || !email || !password) {
             return res.send({ message: "please fill all the fields" })
         }
@@ -20,7 +20,8 @@ const Signup = async (req, res) => {
         const user = await User.create({
             name,
             email,
-            password: hashed
+            password: hashed,
+            role,
         })
         res.status(201).send({
             message: "user ceated successfully",
@@ -28,7 +29,8 @@ const Signup = async (req, res) => {
                 // id: user._id,
                 name: user.name,
                 email: user.email,
-                password: user.password
+                password: user.password,
+
             }
         })
 
